@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 01</title>
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
+    <!-- Css -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
@@ -32,25 +34,38 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!-- font icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- PC Header -->
     <header class="fixed-header">
         <div class="content">
+
             <!-- Navbar -->
             <nav class="navbar">
+                <!-- Tablet/mobile menu -->
+                <label for="menu-checkbox" class="toggle-menu">
+                    <i class="fa-solid fa-bars toggle-menu-icon"></i>
+                </label>
                 <!-- Logo -->
-                <a href="#"><img src="./assets/img/logo.svg" alt="Besnik."></a>
+                <a href="#">
+                    <img class="logo" src="./assets/img/logo.svg" alt="Besnik.">
+                </a>
 
                 <!-- Navigation -->
-                <ul>
+                <ul id="nav-pc" class="nav-pc">
                     <li><a href="#">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#resources">Resources</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="separate show-on-mobile"><a href="#!">Sign in</a></li>
+                    <li class="show-on-mobile"><a href="#!">Sign up</a></li>
                 </ul>
 
                 <!-- Action -->
@@ -59,6 +74,30 @@
                     <a href="#!" class="btn action-btn">Sign up</a>
                 </div>
             </nav>
+        </div>
+    </header>
+    <!-- Tablet/mobile header -->
+    <header class="mobile-header">
+        <input type="checkbox" name="" id="menu-checkbox" class="menu-checkbox" hidden />
+        <!-- Overlay -->
+        <label for="menu-checkbox" class="menu-overlay">
+        </label>
+        <!-- Menu content -->
+        <div class="menu-drawer">
+            <!-- Logo -->
+            <a href="#">
+                <img class="logo" src="./assets/img/logo.svg" alt="Besnik.">
+            </a>
+            <!--  -->
+            <ul id="nav-tablet-mobile" class="nav-tablet-mobile">
+
+            </ul>
+
+            <script>
+                const navPC = document.querySelector('#nav-pc');
+                const navTablet = document.querySelector('#nav-tablet-mobile');
+                navTablet.innerHTML = navPC.innerHTML;
+            </script>
         </div>
     </header>
     <!-- Main -->
@@ -97,7 +136,7 @@
 
                 <div class="row row-desc">
                     <p class="desc">More than 45,000+ companies trust besnik</p>
-                    <p class="desc">5 Star Ratings (2k+ Review)</p>
+                    <p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
                 </div>
                 <div class="images">
                     <a href="#!">
@@ -136,7 +175,7 @@
                     <li class="guide-item">
                         <img src="./assets/img/buyer.svg" alt="buyer" class="icon">
                         <h3 class="title">Buyer Guides</h3>
-                        <a href="" class="link">
+                        <a href="#!" class="link">
                             <span>How to buy</span>
                             <img src="./assets/img/arrow-right.svg" alt="arrow right" class="arrow">
                         </a>
@@ -144,7 +183,7 @@
                     <li class="guide-item">
                         <img src="./assets/img/renter.svg" alt="renter" class="icon">
                         <h3 class="title">Renter Guides</h3>
-                        <a href="" class="link">
+                        <a href="#!" class="link">
                             <span>How to rent</span>
                             <img src="./assets/img/arrow-right.svg" alt="arrow right" class="arrow">
                         </a>
@@ -152,7 +191,7 @@
                     <li class="guide-item">
                         <img src="./assets/img/seller.svg" alt="" class="icon">
                         <h3 class="title">Seller Guides</h3>
-                        <a href="" class="link">
+                        <a href="#!" class="link">
                             <span>How to sell</span>
                             <img src="./assets/img/arrow-right.svg" alt="arrow right" class="arrow">
                         </a>
@@ -249,6 +288,9 @@
                         </div>
                     </div>
 
+                </div>
+                <div class="view-all show-on-mobile">
+                    <a href="#!" class="btn">View All Properties</a>
                 </div>
             </div>
         </div>
@@ -347,6 +389,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- Footer -->
@@ -430,6 +473,7 @@
             </div>
         </div>
     </footer>
+
 
 </body>
 
